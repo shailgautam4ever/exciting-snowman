@@ -1,0 +1,114 @@
+.triangle {
+  height: 0px;
+  width: 0px;
+  position: relative;
+  /* background-color: pink; */
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  /* border-left: 50px solid teal; */
+  border-right: 120px solid teal;
+  transform: rotate(90deg);
+  left: 200px;
+  /* z-index: 1; */
+}
+body:hover .triangle::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 100px;
+  height: 2px;
+  transform: rotate(90deg);
+}
+
+body:hover .triangle::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 90px;
+  height: 2px;
+  transform: rotate(90deg);
+}
+
+.face {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(209, 148, 148);
+  position: relative;
+  top: -35px;
+  left: 210px;
+  border-radius: 50%;
+}
+
+.eye-pack {
+  display: flex;
+  gap: 20px;
+}
+
+.eyes {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+  top: 30px;
+  left: 25px;
+}
+
+body:hover .eyes {
+  animation: eye-ani 300ms ease-in 0s infinite;
+}
+body:hover .smile {
+  animation: smile-size 300ms ease-in 0s infinite;
+}
+
+@keyframes eye-ani {
+  0% {
+    left: 20px;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 20px;
+  }
+}
+@keyframes eye-color {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: brown;
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+.eye-left {
+  left: 20px;
+}
+
+.eye-right {
+  left: 30px;
+}
+
+.smile {
+  width: 20px;
+  height: 2px;
+  background-color: rgb(171, 68, 68);
+  position: relative;
+  top: 50%;
+  left: 40px;
+}
+
+@keyframes smile-size {
+  0% {
+    width: 100px;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 100px;
+  }
+}
